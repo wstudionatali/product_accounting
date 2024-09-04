@@ -43,5 +43,7 @@ class DatabaseSeeder extends Seeder
         'user_role_id' => $admin_id,
     ]);
 
+    User::factory(4)->create();
+
     }
 }
