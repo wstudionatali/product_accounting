@@ -62,7 +62,7 @@ class UserController extends Controller
 
 
             //$user->user_role_id = $data['role']; $user->save();
-            $user->update(['user_role_id'=> $data['role']]??Null);
+            $user->update(['user_role_id'=> $data['role']??Null]);
         }
             return redirect()->back()->with('success', 'User updated successfully.');
     }
