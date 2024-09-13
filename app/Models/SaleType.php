@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SaleType extends Model
 {
+    public $timestamps = false;
     use HasFactory;
     public $rule_types =  ['%', '$', 'pices'];
     public $conditions = ['unconditional', 'quantity', 'additional products', 'bundl'];

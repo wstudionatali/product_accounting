@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Sale extends Model
 {
+    public $timestamps = false;
     use HasFactory;
 
     public function saleType() :BelongsTo

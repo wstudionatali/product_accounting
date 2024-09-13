@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Bill extends Model
 {
+    public $timestamps = false;
     use HasFactory;
     public function billCompositions() :HasMany
     {

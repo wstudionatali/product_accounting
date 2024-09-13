@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductIncomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -27,9 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+require __DIR__.'/auth.php';
 
 Route::prefix('admin')->middleware('admin')->group(function () {
     Route::resource('users', UserController::class)->only(['index', 'update', 'destroy']);
-    //Route::post('users/{user}/update', [UserController::class, 'update'])->name('users.update');
 });
-require __DIR__.'/auth.php';
+
+Route::resource('products', ProductController::class)->except('show');
+Route::resource('products.incomes', ProductIncomeController::class)->only([ 'create', 'store', 'destroy']);

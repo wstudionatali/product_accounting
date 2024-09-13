@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class UserRole extends Model
 {
+    public $timestamps = false;
     use HasFactory;
     public function users() :HasMany
     {
