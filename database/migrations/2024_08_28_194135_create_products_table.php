@@ -16,7 +16,7 @@ return new class extends Migration
             $table->char('barcode', length: 50)->unique()->index();
             $table->char('name', length: 200);
             $table->decimal('price', total: 8, places: 2)->default(0);
-            $table->timestamps();
+           // $table->timestamps();
         });
     }
 

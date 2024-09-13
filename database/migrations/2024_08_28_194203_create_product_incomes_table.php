@@ -15,10 +15,10 @@ return new class extends Migration
         Schema::create('product_incomes', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Product::class)->constrained();
-            $table->decimal('purchase_price', total: 8, places: 2);
+            $table->decimal('purchase_price', total: 8, places: 2)->default(0);
             $table->unsignedInteger('income_quantity')->default(1);
             $table->unsignedInteger('current_quantity')->default(1);
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
